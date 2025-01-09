@@ -1,3 +1,3 @@
 # Bilkent University
-EEE 102-Digital Logic Design
-Term Project
+# EEE 102-Digital Logic Design
+# Term Project
