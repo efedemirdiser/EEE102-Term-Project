@@ -1,0 +1,102 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Sat Dec 28 14:00:02 2024
+| Host         : Efe running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file alarm_main_control_sets_placed.rpt
+| Design       : alarm_main
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    24 |
+|    Minimum number of control sets                        |    24 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    91 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    24 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     8 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              57 |           19 |
+| No           | No                    | Yes                    |              21 |            6 |
+| No           | Yes                   | No                     |              31 |           10 |
+| Yes          | No                    | No                     |              63 |           21 |
+| Yes          | No                    | Yes                    |              70 |           19 |
+| Yes          | Yes                   | No                     |              35 |           13 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|                                    Clock Signal                                   |                                           Enable Signal                                           |                                        Set/Reset Signal                                       | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG                                                                    |                                                                                                   | password_checker_inst/incorrect_password/fsm/reset                                            |                1 |              1 |         1.00 |
+|  password_checker_inst/incorrect_password/fsm/reset_alarm_reg_i_2_n_0             |                                                                                                   |                                                                                               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/incorrect_password/ssd_count/clk/enable_count                               | password_checker_inst/incorrect_password/fsm/fsm_rreset                                       |                1 |              2 |         2.00 |
+|  password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/clk_2 |                                                                                                   |                                                                                               |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/b_in_reg[8]_i_1_n_0             | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/b_in_reg[12]_i_1_n_0        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/i                               | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd40                       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd4[11]                        | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd40                       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd4[7]                         | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd40                       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd4[15]                        | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd40                       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd4[3]                         | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/bcd40                       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/keypad_2/C0/Col[3]_i_1_n_0                                                  |                                                                                               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/b_in_reg[8]_i_1_n_0             |                                                                                               |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/keypad_2/C0/DecodeOut[7]_i_1_n_0                                            |                                                                                               |                3 |              8 |         2.67 |
+|  password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/clk_2 | password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/distance[8]_i_1_n_0    |                                                                                               |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                                                    |                                                                                                   | password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/clear              |                3 |             11 |         3.67 |
+|  password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/clk_2 | password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/echo_2                 | password_checker_inst/sensor_module/distance_checker/Inst_control_maxsonar/echo_2[10]_i_1_n_0 |                3 |             11 |         3.67 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/incorrect_password/ssd_count/clk/scnd                                       | password_checker_inst/incorrect_password/fsm/fsm_rreset                                       |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/Inst_bin2bcd/FSM_onehot_P1.state_reg_n_0_[3] |                                                                                               |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/sensor_module/distance_checker/distance_20_carry_n_1                        |                                                                                               |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG                                                                    |                                                                                                   | resett_IBUF                                                                                   |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG                                                                    |                                                                                                   | password_checker_inst/keypad_2/C0/sclk[19]_i_1_n_0                                            |                7 |             20 |         2.86 |
+|  password_checker_inst/keypad_2/C1/hh/CLK                                         | shift_IBUF                                                                                        | resett_IBUF                                                                                   |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG                                                                    | password_checker_inst/incorrect_password/ssd_count/clk/enable_count_reg_n_0                       | password_checker_inst/incorrect_password/fsm/fsm_rreset                                       |                7 |             28 |         4.00 |
+|  clk_IBUF_BUFG                                                                    |                                                                                                   |                                                                                               |               16 |             54 |         3.38 |
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
